@@ -33,5 +33,7 @@ class Quinoa(altura : Double,  anioSemilla: Int,val espacioQuinoa : Double) : Pl
 
     override fun horasDeSolToleradas() = if(espacioQuinoa < 0.3) {10} else {super.horasDeSolToleradas()}
 
-
+    override fun daSemillas(): Boolean {
+        return super.daSemillas() || anioSemilla in 2001..2008
+    }
 }

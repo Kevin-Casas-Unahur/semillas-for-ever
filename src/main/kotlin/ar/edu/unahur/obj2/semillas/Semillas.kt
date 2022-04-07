@@ -16,10 +16,6 @@ class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
 
    override fun daSemillas() = this.altura > 0.4 || super.daSemillas()
 
-    fun esFuerte(): Boolean {
-        TODO("Estas seguro que lo queres implementar así?")
-    }
-
     override fun espacio() = this.altura + 1.0
 
 }

@@ -1,5 +1,21 @@
 package ar.edu.unahur.obj2.semillas
 
+open class Planta(var altura: Double, val anioSemilla: Int) {
+
+
+    fun horasDeSolToleradas() {}
+
+    fun esFuerte() {}
+
+    fun daNuevasSemillas() {}
+
+    fun espacio() {
+        TODO("Pasaron cosas")
+    }
+
+
+}
+
 class Menta(var altura: Double, val anioSemilla: Int) {
     fun espacio(): Double {
         TODO("Te la debo, amigue...")
@@ -29,9 +45,3 @@ class Soja(var altura: Double, val anioSemilla: Int) {
     }
 }
 
-class Planta(var altura: Double, val anioSemilla: Int) {
-    fun espacio() {
-        TODO("Pasaron cosas")
-    }
-
-}

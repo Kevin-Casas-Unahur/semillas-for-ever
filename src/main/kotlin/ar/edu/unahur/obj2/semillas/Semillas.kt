@@ -3,20 +3,18 @@ package ar.edu.unahur.obj2.semillas
 open class Planta(var altura: Double, val anioSemilla: Int) {
 
 
-    fun horasDeSolToleradas() {}
+    fun horasDeSolToleradas() = 7
 
-    fun esFuerte() {}
+    fun esFuerte() = this.horasDeSolToleradas() > 9
 
-    fun daNuevasSemillas() {}
+    fun daNuevasSemillas() = this.esFuerte()
 
-    fun espacio() {
-        TODO("Pasaron cosas")
-    }
-
+    fun espacio() = 0
 
 }
 
-class Menta(var altura: Double, val anioSemilla: Int) {
+class Menta(var altura, val anioSemilla: Int) {
+
     fun espacio(): Double {
         TODO("Te la debo, amigue...")
     }

@@ -8,7 +8,7 @@ open class Planta(var altura: Double, val anioSemilla: Int) {
 
     open fun daSemillas() = this.esFuerte()
 
-    open fun espacio() = 0
+    open fun espacio() : Double = 0.0
 
 }
 
@@ -20,9 +20,7 @@ class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
         TODO("Estas seguro que lo queres implementar así?")
     }
 
-    fun espacio(): Double {
-        TODO("Te la debo, amigue...")
-    }
+    override fun espacio() = this.altura + 1.0
 
 }
 

@@ -2,29 +2,26 @@ package ar.edu.unahur.obj2.semillas
 
 open class Planta(var altura: Double, val anioSemilla: Int) {
 
+    open fun horasDeSolToleradas() = 7
 
-    fun horasDeSolToleradas() = 7
+    open fun esFuerte() = this.horasDeSolToleradas() > 9
 
-    fun esFuerte() = this.horasDeSolToleradas() > 9
+    open fun daSemillas() = this.esFuerte()
 
-    fun daNuevasSemillas() = this.esFuerte()
-
-    fun espacio() = 0
+    open fun espacio() = 0
 
 }
 
-class Menta(var altura, val anioSemilla: Int) {
+class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
 
-    fun espacio(): Double {
-        TODO("Te la debo, amigue...")
-    }
-
-    fun daSemillas(): Boolean {
-        TODO("Colgue, che...")
-    }
+   override fun daSemillas() = this.altura > 0.4 || super.daSemillas()
 
     fun esFuerte(): Boolean {
         TODO("Estas seguro que lo queres implementar así?")
+    }
+
+    fun espacio(): Double {
+        TODO("Te la debo, amigue...")
     }
 
 }

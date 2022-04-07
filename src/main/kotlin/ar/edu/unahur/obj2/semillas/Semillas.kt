@@ -20,17 +20,11 @@ class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
 
 }
 
-class Soja(var altura: Double, val anioSemilla: Int) {
-    fun espacio(): Double {
-        TODO("Lee un poco más el enunciado...")
-    }
+class Soja(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
+    override fun espacio() = altura / 2
 
-    fun daSemillas(): Boolean {
-        TODO("Dalee")
-    }
+    override fun daSemillas() = super.daSemillas() || (anioSemilla > 2007 && altura in 0.75..0.9)
 
-    fun esFuerte(): Boolean {
-        TODO("Así me implementas mejor")
-    }
-}
+    override fun horasDeSolToleradas() = if(altura < 0.5) {6}
+        else if (altura in 0.5..1.0) {8} else {12} }
 

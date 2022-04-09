@@ -45,3 +45,10 @@ class SemillasTest : DescribeSpec ({
         }
     }
 })
+
+class ParcelasTest : DescribeSpec ({
+    describe("Creacion de Parcela") {
+        val Parcela1 = Parcelas(10.0, 20.0, 10)
+
+    }
+})

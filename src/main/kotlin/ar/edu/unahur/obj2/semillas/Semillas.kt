@@ -20,7 +20,7 @@ class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
 
 }
 
-class Soja(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
+open class Soja(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
     override fun espacio() = altura / 2
 
     override fun daSemillas() = super.daSemillas() || (anioSemilla > 2007 && altura in 0.75..0.9)
@@ -36,4 +36,10 @@ class Quinoa(altura : Double,  anioSemilla: Int,val espacioQuinoa : Double) : Pl
     override fun daSemillas(): Boolean {
         return super.daSemillas() || anioSemilla in 2001..2008
     }
+}
+
+class SojaTransgenica(altura : Double,  anioSemilla: Int) : Soja(altura, anioSemilla) {
+    override fun daSemillas() = false
+
+
 }

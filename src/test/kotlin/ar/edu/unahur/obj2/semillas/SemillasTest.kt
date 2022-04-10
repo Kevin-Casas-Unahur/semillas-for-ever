@@ -56,5 +56,9 @@ class ParcelasTest : DescribeSpec ({
         it("Superficie de la parcela") {
             Parcela1.superficie().shouldBe(20)
         }
+
+        it("Cantidad maxima de plantas") {
+            Parcela1.cantMaximaDePlantas().shouldBe(4)
+        }
     }
 })

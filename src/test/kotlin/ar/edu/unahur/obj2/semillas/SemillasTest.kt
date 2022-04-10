@@ -60,5 +60,7 @@ class ParcelasTest : DescribeSpec ({
         it("Cantidad maxima de plantas") {
             Parcela1.cantMaximaDePlantas().shouldBe(4)
         }
+
+
     }
 })

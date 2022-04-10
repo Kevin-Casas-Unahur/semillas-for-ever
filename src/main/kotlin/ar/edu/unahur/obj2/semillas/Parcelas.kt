@@ -9,5 +9,6 @@ class Parcelas(val ancho : Double, val largo : Double, val horasDeSol : Int) {
 
     fun tieneComplicaciones() = plantas.any { it.horasDeSolToleradas() < horasDeSol }
 
-    fun plantar(semilla : Planta) {plantas.add(semilla)}
+    fun plantar(semilla : Planta) {if (!plantas.size.equals(this.cantMaximaDePlantas())) {
+    plantas.add(semilla)} }
 }

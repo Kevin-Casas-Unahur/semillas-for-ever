@@ -47,8 +47,14 @@ class SemillasTest : DescribeSpec ({
 })
 
 class ParcelasTest : DescribeSpec ({
-    describe("Creacion de Parcela") {
-        val Parcela1 = Parcelas(10.0, 20.0, 10)
+    describe("Creacion de Parcela y plantas") {
+        val Parcela1 = Parcelas(20.0, 1.0, 10)
+        val menta = Menta(1.0, 2021)
+        val mentita = Menta(0.3, 2021)
+        val soja = Soja(0.6, 2009)
 
+        it("Superficie de la parcela") {
+            Parcela1.superficie().shouldBe(20)
+        }
     }
 })

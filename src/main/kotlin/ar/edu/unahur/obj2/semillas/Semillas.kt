@@ -38,6 +38,8 @@ class Quinoa(altura : Double,  anioSemilla: Int,val espacioQuinoa : Double) : Pl
     override fun daSemillas(): Boolean {
         return super.daSemillas() || anioSemilla in 2001..2008
     }
+
+    override fun esParcelaIdeal(parcela: Parcelas) = parcela.plantas.any{it.altura <= 1.5}
 }
 
 class SojaTransgenica(altura : Double,  anioSemilla: Int) : Soja(altura, anioSemilla) {

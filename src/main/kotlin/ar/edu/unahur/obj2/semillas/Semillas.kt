@@ -28,7 +28,10 @@ open class Soja(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla
     override fun daSemillas() = super.daSemillas() || (anioSemilla > 2007 && altura in 0.75..0.9)
 
     override fun horasDeSolToleradas() = if(altura < 0.5) {6}
-        else if (altura < 1) {8} else {12} }
+        else if (altura < 1) {8} else {12}
+
+    override fun esParcelaIdeal(parcela: Parcelas) = parcela.horasDeSol == this.horasDeSolToleradas()
+}
 
 class Quinoa(altura : Double,  anioSemilla: Int,val espacioQuinoa : Double) : Planta(altura, anioSemilla) {
     override fun espacio() = espacioQuinoa

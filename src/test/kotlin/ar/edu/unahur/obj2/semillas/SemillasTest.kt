@@ -102,11 +102,28 @@ class ParcelasTest : DescribeSpec ({
 class ParcelasIdealesTest : DescribeSpec ({
     describe("Las plantas identifican parcelas ideale") {
         val parcela1 = Parcelas(20.0, 1.0, 10)
-        val parcela2 = Parcelas(20.0, 1.0, 10)
-        val parcela3 = Parcelas(20.0, 1.0, 10)
+        val parcela2 = Parcelas(10.0, 5.0, 10)
+        val parcela3 = Parcelas(2.0, 1.0, 10)
         val menta = Menta(1.0, 2021)
         val soja = Soja(0.6, 2009)
         val sojaTransgenica = SojaTransgenica(1.2, 2014)
         val quinoa = Quinoa(0.2, 2010,3.0)
+        val peperina = Peperina(1.0, 2021)
+
+        it("Parcela ideal para Menta") {
+
+        }
+        it("Parcela ideal para Soja") {
+
+        }
+        it("Parcela ideal para Soja Transgenica") {
+
+        }
+        it("Parcela ideal para Quinoa") {
+
+        }
+        it("Parcela ideal para Peperina") {
+
+        }
     }
 })

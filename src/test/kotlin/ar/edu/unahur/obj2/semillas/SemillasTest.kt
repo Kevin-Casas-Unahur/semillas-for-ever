@@ -111,7 +111,9 @@ class ParcelasIdealesTest : DescribeSpec ({
         val peperina = Peperina(1.0, 2021)
 
         it("Parcela ideal para Menta") {
-
+            menta.esParcelaIdeal(parcela1).shouldBeTrue()
+            menta.esParcelaIdeal(parcela2).shouldBeTrue()
+            menta.esParcelaIdeal(parcela3).shouldBeFalse()
         }
         it("Parcela ideal para Soja") {
 

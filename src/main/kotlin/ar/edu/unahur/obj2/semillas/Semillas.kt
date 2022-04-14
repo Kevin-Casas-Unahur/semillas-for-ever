@@ -10,6 +10,8 @@ open class Planta(var altura: Double, val anioSemilla: Int) {
 
     open fun espacio() : Double = 0.0
 
+    open fun esParcelaIdeal(parcela: Parcelas) = parcela.superficie() > 6
+
 }
 
 open class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {

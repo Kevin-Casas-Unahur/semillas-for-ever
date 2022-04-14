@@ -102,8 +102,8 @@ class ParcelasTest : DescribeSpec ({
 class ParcelasIdealesTest : DescribeSpec ({
     describe("Las plantas identifican parcelas ideale") {
         val parcela1 = Parcelas(20.0, 1.0, 10)
-        val parcela2 = Parcelas(10.0, 5.0, 10)
-        val parcela3 = Parcelas(2.0, 1.0, 10)
+        val parcela2 = Parcelas(10.0, 5.0, 15)
+        val parcela3 = Parcelas(2.5, 2.0, 8)
         val menta = Menta(1.0, 2021)
         val soja = Soja(0.6, 2009)
         val sojaTransgenica = SojaTransgenica(1.2, 2014)
@@ -116,16 +116,24 @@ class ParcelasIdealesTest : DescribeSpec ({
             menta.esParcelaIdeal(parcela3).shouldBeFalse()
         }
         it("Parcela ideal para Soja") {
-
+            soja.esParcelaIdeal(parcela1).shouldBeFalse()
+            soja.esParcelaIdeal(parcela2).shouldBeFalse()
+            soja.esParcelaIdeal(parcela3).shouldBeTrue()
         }
         it("Parcela ideal para Soja Transgenica") {
-
+            sojaTransgenica.esParcelaIdeal(parcela1).shouldBeFalse()
+            sojaTransgenica.esParcelaIdeal(parcela2).shouldBeFalse()
+            sojaTransgenica.esParcelaIdeal(parcela3).shouldBeTrue()
         }
         it("Parcela ideal para Quinoa") {
-
+            sojaTransgenica.esParcelaIdeal(parcela1).shouldBeTrue()
+            sojaTransgenica.esParcelaIdeal(parcela2).shouldBeTrue()
+            sojaTransgenica.esParcelaIdeal(parcela3).shouldBeTrue()
         }
         it("Parcela ideal para Peperina") {
-
+            peperina.esParcelaIdeal(parcela1).shouldBeTrue()
+            peperina.esParcelaIdeal(parcela2).shouldBeTrue()
+            peperina.esParcelaIdeal(parcela3).shouldBeTrue()
         }
     }
 })

@@ -126,14 +126,14 @@ class ParcelasIdealesTest : DescribeSpec ({
             sojaTransgenica.esParcelaIdeal(parcela3).shouldBeTrue()
         }
         it("Parcela ideal para Quinoa") {
-            sojaTransgenica.esParcelaIdeal(parcela1).shouldBeTrue()
-            sojaTransgenica.esParcelaIdeal(parcela2).shouldBeTrue()
-            sojaTransgenica.esParcelaIdeal(parcela3).shouldBeTrue()
+            quinoa.esParcelaIdeal(parcela1).shouldBeTrue()
+            quinoa.esParcelaIdeal(parcela2).shouldBeTrue()
+            quinoa.esParcelaIdeal(parcela3).shouldBeTrue()
         }
         it("Parcela ideal para Peperina") {
             peperina.esParcelaIdeal(parcela1).shouldBeTrue()
             peperina.esParcelaIdeal(parcela2).shouldBeTrue()
-            peperina.esParcelaIdeal(parcela3).shouldBeTrue()
+            peperina.esParcelaIdeal(parcela3).shouldBeFalse()
         }
     }
 })

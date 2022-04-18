@@ -12,6 +12,8 @@ open class Planta(var altura: Double, val anioSemilla: Int) {
 
     open fun esParcelaIdeal(parcela: Parcelas) = parcela.superficie() > 6
 
+
+
 }
 
 open class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
@@ -19,6 +21,7 @@ open class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemill
    override fun daSemillas() = this.altura > 0.4 || super.daSemillas()
 
     override fun espacio() = this.altura + 1.0
+
 
 }
 
@@ -53,5 +56,6 @@ class SojaTransgenica(altura : Double,  anioSemilla: Int) : Soja(altura, anioSem
 
 class Peperina(altura : Double,  anioSemilla: Int) : Menta(altura, anioSemilla) {
     override fun espacio() = super.espacio() * 2
+
 
 }

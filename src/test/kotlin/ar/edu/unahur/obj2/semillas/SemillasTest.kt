@@ -138,5 +138,17 @@ class ParcelasIdealesTest : DescribeSpec ({
             peperina.esParcelaIdeal(parcela2).shouldBeTrue()
             peperina.esParcelaIdeal(parcela3).shouldBeFalse()
         }
+
+        it("peperina se asocia bien") {
+            parcelaEco1.seAsociaBien(peperina).shouldBeTrue()
+            parcelaIndu1.seAsociaBien(peperina).shouldBeTrue()
+        }
+
+        it("quinoa se asocia bien") {
+            parcelaEco1.seAsociaBien(quinoa).shouldBeTrue()
+            parcelaIndu1.seAsociaBien(quinoa).shouldBeTrue()
+        }
+
+
     }
 })

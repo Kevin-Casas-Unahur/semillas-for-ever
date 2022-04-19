@@ -3,12 +3,20 @@ package ar.edu.unahur.obj2.semillas
 open class Parcelas(private val ancho : Double, private val largo : Double, val horasDeSol : Int) {
     var plantas = mutableListOf<Planta>()
 
+    //Superficie es ancho * largo
     fun superficie() = ancho * largo
 
+    /*
+    Si el ancho es mayor que el largo la cantidad maxima de plantas es la superficie dividida 5
+    en caso contrario es la superficie dividida por 3 y luego sumada por el largo
+     */
     fun cantMaximaDePlantas() = if(ancho > largo) {this.superficie() / 5} else {(this.superficie() / 3) + largo}
 
+    //Tiene complicaciones si alguna de las plantas en la Parcela,
+    // tolera menos horas de sol que las que recibe lar parcela
     fun tieneComplicaciones() = plantas.any{ it.horasDeSolToleradas() < horasDeSol }
 
+    //Agrega una planta a la Parcela, siempre y cuando halla lugar
     fun plantar(semilla : Planta) {if (plantas.size < this.cantMaximaDePlantas()) { plantas.add(semilla)} }
 
 }

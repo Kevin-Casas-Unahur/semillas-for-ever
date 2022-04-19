@@ -81,6 +81,8 @@ class SojaTransgenica(altura : Double,  anioSemilla: Int) : Soja(altura, anioSem
 }
 
 class Peperina(altura : Double,  anioSemilla: Int) : Menta(altura, anioSemilla) {
+
+    //Su espacio es su altura + 1.0 multiplicado por 2
     override fun espacio() = super.espacio() * 2
 
 

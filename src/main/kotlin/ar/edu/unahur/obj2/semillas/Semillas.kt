@@ -4,12 +4,15 @@ open class Planta(var altura: Double, val anioSemilla: Int) {
 
     open fun horasDeSolToleradas() = 7
 
+    //Una planta es fuerte cuando tolera más de 9 horas de sol
     open fun esFuerte() = this.horasDeSolToleradas() > 9
 
+    //Una planta da semillas si es fuerte
     open fun daSemillas() = this.esFuerte()
 
     open fun espacio() : Double = 0.0
 
+    //Una parcela es ideal para la planta cuando su superficie es mayor a 6
     open fun esParcelaIdeal(parcela: Parcelas) = parcela.superficie() > 6
 
 

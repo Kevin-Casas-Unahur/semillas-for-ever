@@ -21,6 +21,9 @@ open class ParcelaEcologica(ancho : Double, largo : Double, horasDeSol : Int) : 
 
 open class ParcelaIndustrial(ancho : Double, largo : Double, horasDeSol : Int) : Parcelas(ancho ,  largo , horasDeSol) {
 
+    /*Para que una planta se asocie bien deben haber 2 o menos plantas en la parcela
+     Y la planta debe ser fuerte
+     */
     fun seAsociaBien(planta : Planta) = (this.plantas.size <= 2) and (planta.esFuerte())
 
 }

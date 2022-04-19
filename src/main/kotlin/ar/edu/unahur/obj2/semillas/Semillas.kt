@@ -72,8 +72,11 @@ class Quinoa(altura : Double,  anioSemilla: Int,val espacioQuinoa : Double) : Pl
 }
 
 class SojaTransgenica(altura : Double,  anioSemilla: Int) : Soja(altura, anioSemilla) {
+
+    //Nunca da semillas
     override fun daSemillas() = false
 
+    //Es parcela ideal si solo hay una planta en la parcela
     override fun esParcelaIdeal(parcela: Parcelas) = parcela.cantMaximaDePlantas().equals(1.0)
 }
 

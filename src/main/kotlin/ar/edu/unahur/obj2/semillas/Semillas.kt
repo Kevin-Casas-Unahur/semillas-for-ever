@@ -21,8 +21,10 @@ open class Planta(var altura: Double, val anioSemilla: Int) {
 
 open class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
 
-   override fun daSemillas() = this.altura > 0.4 || super.daSemillas()
+    //Menta da semillas si es más alta que 0.4 metros o es fuerte
+    override fun daSemillas() = this.altura > 0.4 || super.daSemillas()
 
+    //El espacio de la Menta es su altura más 1.0
     override fun espacio() = this.altura + 1.0
 
 

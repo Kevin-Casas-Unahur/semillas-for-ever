@@ -31,13 +31,23 @@ open class Menta(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemill
 }
 
 open class Soja(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla) {
+
+    //Espacio de Soja es su altura dividida por 2
     override fun espacio() = altura / 2
 
+    //Da semillas si es fuerte o
+    // el año de su semilla es mayor a 2007 y su altura está entre 0.75 y 0.9 metros
     override fun daSemillas() = super.daSemillas() || (anioSemilla > 2007 && altura in 0.75..0.9)
 
+    /*
+    Si su altura es menor a 0.5 tolera 6 horas,
+    Si es mayor a 0.5, pero menor a 1.0 tolera 8 horas
+    Y si es igual o mayor a 1.0 tolera 12 horas
+     */
     override fun horasDeSolToleradas() = if(altura < 0.5) {6}
         else if (altura < 1) {8} else {12}
 
+    //Es parcela ideal cuando la parcela recibe las mismas horas de sol que las toleradas
     override fun esParcelaIdeal(parcela: Parcelas) = parcela.horasDeSol == this.horasDeSolToleradas()
 }
 

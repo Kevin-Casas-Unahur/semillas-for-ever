@@ -54,12 +54,20 @@ open class Soja(altura : Double,  anioSemilla: Int) : Planta(altura, anioSemilla
 class Quinoa(altura : Double,  anioSemilla: Int,val espacioQuinoa : Double) : Planta(altura, anioSemilla) {
     override fun espacio() = espacioQuinoa
 
+    /*
+    Si su espacio es menor a 0.3 metros tolera 10 horas de sol
+    de lo contrario tolera 7 horas
+     */
     override fun horasDeSolToleradas() = if(espacioQuinoa < 0.3) {10} else {super.horasDeSolToleradas()}
 
+    /*
+    Da semillas si es fuerte o el año de su semilla está entre 2001 y 2008
+     */
     override fun daSemillas(): Boolean {
         return super.daSemillas() || anioSemilla in 2001..2008
     }
 
+    //Es parcela ideal si no hay ninguna planta con altura menor o igual a 1.5 metros
     override fun esParcelaIdeal(parcela: Parcelas) = !parcela.plantas.any{it.altura <= 1.5}
 }
 

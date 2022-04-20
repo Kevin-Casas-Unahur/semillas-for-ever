@@ -1,6 +1,7 @@
 package ar.edu.unahur.obj2.semillas
 
 import io.kotest.core.spec.style.DescribeSpec
+import io.kotest.matchers.floats.shouldBeBetween
 import io.kotest.matchers.shouldBe
 
 class IntaTest : DescribeSpec ({
@@ -46,11 +47,18 @@ class IntaTest : DescribeSpec ({
             Inta.promedioPlantasPorParcela().shouldBe(2)
         }
     }
+
+    //Completar
     describe("Parcela mas autosustentable") {
         Inta.parcelas.clear()
 
         it("Si no hay ninguna debe avisar") {
-            
+
+        }
+
+        it("3 parcelas, todas con 4 o mas plantas, y una con el 80, 75 y 50 % de plantas bien asociadas") {
+            val laMasSustentable = Inta.masSustentable()
+            laMasSustentable.porcentajeBienAsociadas().shouldBeBetween(79.0F, 81.0F, 0.1F)
         }
     }
 })

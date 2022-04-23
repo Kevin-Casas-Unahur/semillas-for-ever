@@ -14,8 +14,12 @@ object Inta {
 
     //Completar
     fun masSustentable(): Parcelas {
+        if(parcelas.isEmpty()) {
+            throw error("No hay Parcelas")
+        } else {
         val parcelasConMasDeCuatroPlantas = parcelas.filter { it.plantas.size > 4 }
         val porcentajeParcelaMasSustentable =  parcelasConMasDeCuatroPlantas.maxOf { it.porcentajeBienAsociadas() }
         return parcelasConMasDeCuatroPlantas.find{ it.porcentajeBienAsociadas() == porcentajeParcelaMasSustentable}!!
+        }
     }
 }

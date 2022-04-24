@@ -1,8 +1,12 @@
 package ar.edu.unahur.obj2.semillas
 
+import io.kotest.assertions.exceptionToMessage
+import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.DescribeSpec
 import io.kotest.matchers.floats.shouldBeBetween
+import io.kotest.matchers.should
 import io.kotest.matchers.shouldBe
+import io.kotest.matchers.string.startWith
 
 class IntaTest : DescribeSpec ({
 
@@ -53,7 +57,8 @@ class IntaTest : DescribeSpec ({
         Inta.parcelas.clear()
 
         it("Si no hay ninguna debe avisar") {
-
+        val exception = shouldThrow<java.lang.RuntimeException>{Inta.masSustentable()}
+            exception.message should startWith("No hay Parcelas")
         }
 
         it("3 parcelas, todas con 4 o mas plantas, y una con el 80, 75 y 50 % de plantas bien asociadas") {
